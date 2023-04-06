@@ -82,9 +82,8 @@ Define the termination criteria for the NonlinearProblem or SteadyStateProblem.
   * `patience_steps`: If objective is within `patience_objective_multiplier` factor of the criteria and no improvement within `min_max_factor` has happened then terminate.
 
 """
-abstract type TerminationCondition end
 struct NLSolveTerminationCondition{mode, T,
-                                   S <: Union{<:NLSolveSafeTerminationOptions, Nothing}}<:TerminationCondition
+                                   S <: Union{<:NLSolveSafeTerminationOptions, Nothing}}
     abstol::T
     reltol::T
     safe_termination_options::S
